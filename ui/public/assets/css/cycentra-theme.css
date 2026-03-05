@@ -1,0 +1,260 @@
+/* === CyCentra IRIS Theme: Black & Green === */
+
+/* === BACKGROUNDS === */
+body {
+    background: #0a0a0a !important;
+}
+
+body .main-panel {
+    color: #e0e0e0 !important;
+    background: #0f0f0f !important;
+}
+
+/* Top logo header bar */
+.logo-header,
+.logo-header[data-background-color="blue"] {
+    background: #111111 !important;
+}
+
+/* Top navbar */
+.main-header,
+.navbar-header {
+    background: #111111 !important;
+    box-shadow: 0px 0px 8px #00ff4122 !important;
+}
+
+/* Sidebar */
+.sidebar,
+.sidebar.sidebar-style-2 {
+    background: #0d0d0d !important;
+    border-right: 1px solid #00cc3344 !important;
+}
+
+/* === GREEN ACCENT === */
+:root {
+    --cycentra-green: #00cc33;
+    --cycentra-green-dark: #009922;
+    --cycentra-green-glow: #00ff4133;
+}
+
+/* Primary buttons */
+.btn-primary,
+.btn-success {
+    background: #00cc33 !important;
+    border-color: #00cc33 !important;
+    color: #000 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-success:hover,
+.btn-success:focus {
+    background: #009922 !important;
+    border-color: #009922 !important;
+}
+
+/* Active nav item in sidebar */
+.sidebar.sidebar-style-2 .nav.nav-primary > .nav-item.active > a {
+    background: #00cc3322 !important;
+    border-left: 3px solid #00cc33 !important;
+}
+
+.sidebar .nav > .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav .nav-item.active > a p,
+.sidebar.sidebar-style-2 .nav .nav-item.active > a i,
+.sidebar.sidebar-style-2 .nav .nav-item.active > a span {
+    color: #00cc33 !important;
+}
+
+/* Nav links */
+.sidebar .nav > .nav-item a {
+    color: #aaaaaa !important;
+}
+
+.sidebar .nav > .nav-item a:hover p,
+.sidebar .nav > .nav-item a:hover span,
+.sidebar .nav > .nav-item a:hover i {
+    color: #00cc33 !important;
+}
+
+/* Cards */
+body .card,
+body .row-card-no-pd,
+body .list-group-item,
+body .timeline > li > .timeline-panel {
+    background: #151515 !important;
+    border: #00cc3333 1px solid !important;
+    box-shadow: none !important;
+}
+
+/* Card pricing */
+body .card-pricing2 {
+    background: #151515 !important;
+}
+
+/* Dropdowns */
+body .dropdown-menu {
+    background: #1a1a1a !important;
+    border: #00cc3344 1px solid !important;
+    color: #cccccc !important;
+}
+
+/* Tables */
+body .table,
+body .dataTable {
+    color: #dddddd !important;
+}
+
+body .table thead th {
+    border-bottom: 2px solid #00cc3366 !important;
+    color: #00cc33 !important;
+}
+
+/* Input fields */
+body .form-control,
+body input[type="text"],
+body input[type="password"],
+body input[type="email"],
+body input[type="number"],
+body textarea,
+body select {
+    background: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    color: #dddddd !important;
+}
+
+body .form-control:focus {
+    border-color: #00cc33 !important;
+    box-shadow: 0 0 0 0.2rem #00cc3333 !important;
+}
+
+/* Badges and Pills */
+.badge-primary { background: #00cc33 !important; color: #000 !important; }
+
+/* Text links */
+a { color: #00cc33 !important; }
+a:hover { color: #00ff44 !important; }
+
+/* Nav section headers in sidebar */
+.nav-section .sidebar-mini-icon,
+.nav-section span,
+.text-section {
+    color: #00cc3399 !important;
+}
+
+/* Scrollbar */
+.sidebar .scrollbar-inner > .scroll-element .scroll-bar {
+    background-color: #00cc3366 !important;
+}
+
+/* Login page override */
+.login__left_part {
+    background: radial-gradient(#001a00, #000000) !important;
+    border-right: 1px solid #00cc3344;
+}
+
+.login__submit_button,
+.login__submit_button.btn-primary {
+    background: #00cc33 !important;
+    border-color: #00cc33 !important;
+    color: #000 !important;
+    width: 100%;
+}
+
+/* Gradient backgrounds used in nav bars */
+.bg-primary-gradient {
+    background: linear-gradient(-45deg, #0a0a0a, #111111) !important;
+}
+
+/* Nav bottom bar (case tabs) */
+.nav-bottom {
+    background-color: #0a0a0a !important;
+    border-bottom: 1px solid #00cc3333 !important;
+}
+
+.nav-bottom .nav-link {
+    color: #aaa !important;
+}
+
+.nav-bottom .nav-link:hover,
+.nav-bottom .nav-item.active .nav-link {
+    color: #00cc33 !important;
+    border-bottom: 2px solid #00cc33 !important;
+}
+
+/* Suggestags / tag inputs */
+body .amsify-suggestags-input {
+    background: #1a1a1a !important;
+    color: #cac7c7;
+}
+
+/* Info/close gradient banners */
+.bg-info-gradient {
+    background: linear-gradient(-45deg, #001a00, #003300) !important;
+}
+
+.bg-close-gradient {
+    background: #0a0a0a !important;
+}
+
+/* Sidebar bottom branding text */
+.sidebar .mt--2 span,
+.sidebar .mt--2 a {
+    color: #00cc3388 !important;
+}
+
+/* Main header box shadow */
+body .main-header {
+    box-shadow: 0px 0px 5px #000000;
+}
+
+/* Dark cards in case nav */
+.navbar-header[style*="background"] {
+    background: #111111 !important;
+}
+
+/* Modal backgrounds */
+.modal-content {
+    background: #151515 !important;
+    border: 1px solid #00cc3333 !important;
+    color: #dddddd !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #00cc3333 !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #00cc3333 !important;
+}
+
+/* Tab styling */
+.nav-tabs .nav-link.active {
+    background: #1a1a1a !important;
+    border-color: #00cc3344 !important;
+    color: #00cc33 !important;
+}
+
+.nav-tabs .nav-link {
+    color: #aaaaaa !important;
+}
+
+/* Alert/notification overrides */
+.alert-info {
+    background: #001a00 !important;
+    border-color: #00cc3344 !important;
+    color: #00cc33 !important;
+}
+
+/* User section in sidebar */
+.sidebar .user {
+    border-color: rgba(0, 204, 51, 0.15) !important;
+}
+
+.sidebar .user .info a > span {
+    color: #aaaaaa;
+}
+
+.sidebar .user .info a > span .user-level {
+    color: #00cc3399;
+}

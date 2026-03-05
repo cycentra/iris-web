@@ -109,27 +109,8 @@ def _authenticate_password(form, username, password):
 if app.config.get("AUTHENTICATION_TYPE") in ["local", "ldap", "oidc"]:
     @login_blueprint.route('/login', methods=['GET', 'POST'])
     def login():
-        if current_user.is_authenticated:
-            return redirect(url_for('index.index'))
-
-        if is_authentication_oidc() and app.config.get('AUTHENTICATION_LOCAL_FALLBACK') is False:
-            return redirect(url_for('login.oidc_login'))
-
-        form = LoginForm(request.form)
-
-        # check if both http method is POST and form is valid on submit
-        if not form.is_submitted() and not form.validate():
-
-            return _render_template_login(form, None)
-
-        # assign form data to variables
-        username = request.form.get('username', '', type=str)
-        password = request.form.get('password', '', type=str)
-
-        if is_authentication_ldap() is True:
-            return _authenticate_ldap(form, username, password, app.config.get('AUTHENTICATION_LOCAL_FALLBACK'))
-
-        return _authenticate_password(form, username, password)
+        # CyCentra: Login page removed — redirect directly to dashboard
+        return redirect(url_for('index.index'))
 
 if is_authentication_oidc():
     @login_blueprint.route('/oidc-login')

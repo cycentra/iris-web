@@ -28,11 +28,6 @@
 											<span class="link-collapse">My settings</span>
 										</a>
 									</li>
-									<li>
-										<a href={{ url_for('dashboard_rest.logout') }}>
-											<span class="link-collapse">Logout</span>
-										</a>
-									</li>
 								</ul>
 							</div>
 						</div>
@@ -196,6 +191,38 @@
 								<span>Help</span>
 							</a>
 						</li>
+
+						<!-- === CyCentra Tools Section === -->
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section">CyCentra Tools</h4>
+						</li>
+
+						<!-- Dummy link 1: Threat Intel Portal -->
+						<li class="nav-item">
+							<a href="https://example.cycentra.internal/threat-intel" target="_blank" rel="noopener">
+								<i class="fa-solid fa-shield-halved"></i>
+								<span>Threat Intel Portal</span>
+							</a>
+						</li>
+
+						<!-- Dummy link 2: SIEM Dashboard -->
+						<li class="nav-item">
+							<a href="https://example.cycentra.internal/siem" target="_blank" rel="noopener">
+								<i class="fa-solid fa-chart-line"></i>
+								<span>SIEM Dashboard</span>
+							</a>
+						</li>
+
+						<!-- Dummy link 3: Vulnerability Manager -->
+						<li class="nav-item">
+							<a href="https://example.cycentra.internal/vuln-manager" target="_blank" rel="noopener">
+								<i class="fa-solid fa-bug"></i>
+								<span>Vulnerability Manager</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 				<div class="mt--2">
@@ -203,7 +230,7 @@
 						<span class="text-dark text-center ml-auto mr-auto">{{ organisation_name }}</span>
 					</div>
 					<div class="row ml-2 mr-2">
-						<span class="text-dark text-center ml-auto mr-auto"><a href="https://github.com/dfir-iris/iris-web" target="_blank" rel="noopener">IRIS {{ iris_version }}</a> {% if has_updates %}
+						<span class="text-dark text-center ml-auto mr-auto"><a href="https://github.com/cycentra/iris-web" target="_blank" rel="noopener">CyCentra IRIS {{ iris_version }}</a> {% if has_updates %}
 								<a href="/manage/settings?cid={{session['current_case'].case_id}}"> <i class="ml-1 text-warning fas fa-exclamation-circle" title="Updates are available for the server"></i></a>{% endif %}
 						</span>
 					</div>

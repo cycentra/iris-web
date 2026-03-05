@@ -157,6 +157,51 @@ def after_request(response):
     return response
 
 
+@app.before_request
+def auto_login_as_admin():
+    """
+    CyCentra: Bypass login — auto-authenticate every request as the admin user.
+    WARNING: Only use on internal/isolated networks. This disables all access control.
+    """
+    from flask import request as flask_request
+    from flask_login import current_user, login_user
+
+    # Skip static assets and the login/logout routes themselves
+    skip_paths = ['/static/', '/logout']
+    if any(flask_request.path.startswith(p) for p in skip_paths):
+        return
+
+    if not current_user.is_authenticated:
+        try:
+            from app.datamgmt.manage.manage_users_db import get_user
+            from app.iris_engine.access_control.utils import ac_get_effective_permissions_of_user
+            from app.models.cases import Cases
+            from flask import session
+
+            admin_user = get_user(1, id_key='id')
+            if admin_user and admin_user.active:
+                login_user(admin_user)
+                if 'permissions' not in session:
+                    session['permissions'] = ac_get_effective_permissions_of_user(admin_user)
+                if 'current_case' not in session or not session.get('current_case'):
+                    caseid = admin_user.ctx_case
+                    if caseid is None:
+                        case = Cases.query.order_by(Cases.case_id).first()
+                        if case:
+                            caseid = case.case_id
+                            admin_user.ctx_case = caseid
+                            admin_user.ctx_human_case = case.name
+                            db.session.commit()
+                    session['current_case'] = {
+                        'case_name': admin_user.ctx_human_case or 'Default',
+                        'case_info': '',
+                        'case_id': caseid or 1,
+                        'access': ''
+                    }
+        except Exception as e:
+            app.logger.warning(f'CyCentra auto-login failed: {e}')
+
+
 from app.views import register_blusprints
 from app.views import load_user
 from app.views import load_user_from_request

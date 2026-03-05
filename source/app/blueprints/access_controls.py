@@ -497,18 +497,13 @@ def _oidc_proxy_authentication_process(incoming_request: Request):
 
 
 def _local_authentication_process(incoming_request: Request):
-    return current_user.is_authenticated
+    # CyCentra: Authentication bypassed — always authenticated
+    return True
 
 
 def is_user_authenticated(incoming_request: Request):
-    authentication_mapper = {
-        "oidc_proxy": _oidc_proxy_authentication_process,
-        "local": _local_authentication_process,
-        "ldap": _local_authentication_process,
-        "oidc": _local_authentication_process,
-    }
-
-    return authentication_mapper.get(app.config.get("AUTHENTICATION_TYPE"))(incoming_request)
+    # CyCentra: Authentication bypassed — always return True
+    return True
 
 
 def is_authentication_oidc():
