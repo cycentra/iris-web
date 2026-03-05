@@ -3,7 +3,7 @@
 <head>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>IRIS - {% block title %}Case{% endblock %} {% if session['current_case'].case_id %}| {{ session['current_case'].case_name }}  {% endif %}</title>
+	<title>CyCentra IRIS - {% block title %}Case{% endblock %} {% if session['current_case'].case_id %}| {{ session['current_case'].case_name }}  {% endif %}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="/static/assets/img/logo.ico" type="image/x-icon"/>
 	{% if demo_domain %}
@@ -30,9 +30,8 @@
 
     <!-- Specific CSS goes HERE -->
     {% block stylesheets %}{% endblock stylesheets %}
-	{% if current_user.in_dark_mode %}
-		<link rel="stylesheet" href="/static/assets/css/dark-theme.css">
-	{% endif %}
+	<link rel="stylesheet" href="/static/assets/css/dark-theme.css">
+	<link rel="stylesheet" href="/static/assets/css/cycentra-theme.css">
 </head>
 <body>
 	<div class="wrapper {% block layout %}{% endblock layout %} {% include 'includes/sidebar_handler.html' %}">

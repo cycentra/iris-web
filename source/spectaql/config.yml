@@ -10,8 +10,8 @@ extensions:
   graphqlScalarExamples: true
 
 info:
-  title: GraphQL DFIR-IRIS DOCUMENTATION
-  description: Welcome to DFIR-IRIS GraphQL Documentation.
+  title: CyCentra IRIS GraphQL API Documentation
+  description: Welcome to CyCentra IRIS GraphQL Documentation.
   x-introItems:
     - title: IRIS API
       description: To use these API endpoint, an API key is needed and can be found in every user profile under My settings > API Key.
